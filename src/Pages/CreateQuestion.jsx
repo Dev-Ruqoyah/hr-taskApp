@@ -22,7 +22,7 @@ const CreateQuestion = () => {
     const newQuestion = {
       id: Math.floor(Math.random()*10000),
       question: question.trim(),
-      options: [option1, option2, option3, option4],
+      options: [{key:"a.",  val: option1},{key: "b.",val:  option2}, {key:"c.", val: option3}, {key: "d.",val: option4}],
       answer: answer,
     };
 
@@ -98,11 +98,11 @@ const CreateQuestion = () => {
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
         >
-          <option value="">Select the correct answer</option>
-          <option value="Option 1">Option 1</option>
-          <option value="Option 2">Option 2</option>
-          <option value="Option 3">Option 3</option>
-          <option value="Option 4">Option 4</option>
+          <option value="" selected disabled>Select the correct answer</option>
+          <option value={"a."}>Option 1</option>
+          <option value={"b."}>Option 2</option>
+          <option value={"c."}>Option 3</option>
+          <option value={"d."}>Option 4</option>
         </select>
 
         <button
