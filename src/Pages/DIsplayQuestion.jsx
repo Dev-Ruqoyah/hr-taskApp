@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
 import { questionContext } from "../App";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 const DisplayQusetion = () => {
   const { questionnaire } = useContext(questionContext);
@@ -39,6 +41,9 @@ const DisplayQusetion = () => {
     // }
     // setScore(score);
   };
+  const exportPdf = ()=>{
+    const input = document.getElementById("questions-container")
+  }
 
   return (
     <>
@@ -49,12 +54,13 @@ const DisplayQusetion = () => {
           </h2>
          {displayAnswer && <p>Your score is {score}</p>}
           {questionnaire.length === 0 ? (
-            <p className="text-gray-600">No questions added yet.</p>
+            <p className="text-gray-600">
+              No questions added yet.</p>
           ) : (
             questionnaire.map((question, index) => (
               <div
                 key={question.id}
-                className="bg-gray-100 p-4 rounded-md shadow-md mb-4"
+                className="bg-gray-100 p-4 rounded-md shadow-md mb-4 "
               >
                 <h4 className="text-lg font-semibold text-gray-800">{`Q${
                   index + 1
