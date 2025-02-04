@@ -3,6 +3,7 @@ import CreateQuestion from "./Pages/CreateQuestion";
 import NavBar from "./Component/NavBar";
 import { createContext, useState } from "react";
 import DisplayQusetion from "./Pages/DIsplayQuestion";
+import Home from "./Pages/Home";
 
 export const questionContext = createContext();
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <NavBar />
       <questionContext.Provider value={{questionnaire: questionnaire, addQuestion:addQuestion}} >
       <Routes>
+        <Route path="/" element={<Home/>}/>
         <Route path="/create-questions" element={<CreateQuestion />} />
         <Route path="/display-questions" element={<DisplayQusetion/>}/>
       </Routes>
